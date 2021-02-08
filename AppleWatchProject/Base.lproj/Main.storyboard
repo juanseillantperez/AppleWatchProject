@@ -1,24 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e49-75-bW4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="AppleWatchProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9a-8f-BSl">
+                                <rect key="frame" x="110" y="433" width="194" height="30"/>
+                                <state key="normal" title="Request access to HealthHit"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G9a-8f-BSl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Awk-r4-EMC"/>
+                            <constraint firstItem="G9a-8f-BSl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="By5-tR-o74"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cbq-aT-xwe"/>
+                    <connections>
+                        <outlet property="requestHealthKitAccessBtn" destination="G9a-8f-BSl" id="UjR-T7-Q93"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="710.14492753623199" y="94.419642857142847"/>
+        </scene>
+        <!--Workout Selection View Controller-->
+        <scene sceneID="m0K-6C-bo9">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutSelectionViewController" id="TPQ-Sr-wpV" customClass="WorkoutSelectionViewController" customModule="AppleWatchProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Pm-wf-hen">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wsz-nO-c2m">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="mDX-pQ-8Gj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mDX-pQ-8Gj" id="8M3-xP-6Zk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bTv-Ho-C9t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wsz-nO-c2m" firstAttribute="trailing" secondItem="bTv-Ho-C9t" secondAttribute="trailing" id="9fh-Y3-hNJ"/>
+                            <constraint firstItem="wsz-nO-c2m" firstAttribute="top" secondItem="bTv-Ho-C9t" secondAttribute="top" id="MEW-Yh-Qfy"/>
+                            <constraint firstItem="wsz-nO-c2m" firstAttribute="bottom" secondItem="bTv-Ho-C9t" secondAttribute="bottom" id="pC6-qc-Gc4"/>
+                            <constraint firstItem="wsz-nO-c2m" firstAttribute="leading" secondItem="bTv-Ho-C9t" secondAttribute="leading" id="veQ-nf-knq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sFh-PY-fJz"/>
+                    <connections>
+                        <outlet property="workoutsTableview" destination="wsz-nO-c2m" id="baW-3s-hPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1g-2e-q4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566.6666666666667" y="87.723214285714278"/>
+        </scene>
+        <!--Workouts History View Controller-->
+        <scene sceneID="7MI-yM-6pB">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutsHistoryViewController" id="deN-j1-hEj" customClass="WorkoutsHistoryViewController" customModule="AppleWatchProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c36-s5-z2M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-XN-ao7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LmD-rb-9GT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dJn-XN-ao7" firstAttribute="leading" secondItem="LmD-rb-9GT" secondAttribute="leading" id="Ri9-CB-cc8"/>
+                            <constraint firstItem="dJn-XN-ao7" firstAttribute="bottom" secondItem="LmD-rb-9GT" secondAttribute="bottom" id="Up7-25-hXV"/>
+                            <constraint firstItem="dJn-XN-ao7" firstAttribute="top" secondItem="LmD-rb-9GT" secondAttribute="top" id="XPr-od-hwz"/>
+                            <constraint firstItem="dJn-XN-ao7" firstAttribute="trailing" secondItem="LmD-rb-9GT" secondAttribute="trailing" id="vE7-i2-9N1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="historyTableView" destination="dJn-XN-ao7" id="GsI-SB-uKy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obr-7R-SyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566.6666666666667" y="776.11607142857144"/>
+        </scene>
+        <!--Workout Session View Controller-->
+        <scene sceneID="dtd-78-weA">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutSessionViewController" id="MH6-Gw-cri" customClass="WorkoutSessionViewController" customModule="AppleWatchProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Uv-YI-6nt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTD-SU-cEX">
+                                <rect key="frame" x="33" y="104" width="348" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-S6-5eV">
+                                <rect key="frame" x="33" y="139" width="348" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe5-GO-6oB">
+                                <rect key="frame" x="33" y="189" width="348" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cdQ-Mi-CJ7"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vD-SY-DZO">
+                                <rect key="frame" x="33" y="352" width="348" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BNj-bB-6Ud"/>
+                                </constraints>
+                                <state key="normal" title="End"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJA-RV-dKt">
+                                <rect key="frame" x="33" y="294" width="348" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Knj-E7-r7H"/>
+                                </constraints>
+                                <state key="normal" title="Discard"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4G-an-U4W">
+                                <rect key="frame" x="33" y="247" width="348" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="8bm-2a-dpf"/>
+                                </constraints>
+                                <state key="normal" title="Pause"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PGp-Cd-01A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oe5-GO-6oB" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="2mk-uW-MiX"/>
+                            <constraint firstItem="9vD-SY-DZO" firstAttribute="top" secondItem="jJA-RV-dKt" secondAttribute="bottom" constant="14" id="4wx-dY-IpF"/>
+                            <constraint firstItem="ELk-S6-5eV" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="BvQ-Gi-zmv"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="9vD-SY-DZO" secondAttribute="trailing" constant="33" id="GCX-PP-X2A"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="tTD-SU-cEX" secondAttribute="trailing" constant="33" id="GDO-cN-yC8"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="N4G-an-U4W" secondAttribute="trailing" constant="33" id="GTQ-fF-PxN"/>
+                            <constraint firstItem="9vD-SY-DZO" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="HcQ-CG-Qd3"/>
+                            <constraint firstItem="N4G-an-U4W" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="SH3-pl-hqE"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="jJA-RV-dKt" secondAttribute="trailing" constant="33" id="V5a-jN-fub"/>
+                            <constraint firstItem="ELk-S6-5eV" firstAttribute="top" secondItem="tTD-SU-cEX" secondAttribute="bottom" constant="14" id="a2o-cn-PLE"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="oe5-GO-6oB" secondAttribute="trailing" constant="33" id="cR1-BG-mBc"/>
+                            <constraint firstItem="PGp-Cd-01A" firstAttribute="trailing" secondItem="ELk-S6-5eV" secondAttribute="trailing" constant="33" id="cag-6m-we0"/>
+                            <constraint firstItem="tTD-SU-cEX" firstAttribute="top" secondItem="PGp-Cd-01A" secondAttribute="top" constant="60" id="dvK-zK-Ofb"/>
+                            <constraint firstItem="N4G-an-U4W" firstAttribute="top" secondItem="oe5-GO-6oB" secondAttribute="bottom" constant="14" id="nMj-mh-hTS"/>
+                            <constraint firstItem="oe5-GO-6oB" firstAttribute="top" secondItem="ELk-S6-5eV" secondAttribute="bottom" constant="29" id="ojS-jp-Ta6"/>
+                            <constraint firstItem="jJA-RV-dKt" firstAttribute="top" secondItem="N4G-an-U4W" secondAttribute="bottom" constant="14" id="qGZ-CL-0ab"/>
+                            <constraint firstItem="tTD-SU-cEX" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="usf-Xz-P1z"/>
+                            <constraint firstItem="jJA-RV-dKt" firstAttribute="leading" secondItem="PGp-Cd-01A" secondAttribute="leading" constant="33" id="z9j-AD-H5k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="tTD-SU-cEX" id="tPU-4W-6Bg"/>
+                        <outlet property="discardBtn" destination="jJA-RV-dKt" id="YDk-YR-Euf"/>
+                        <outlet property="endBtn" destination="9vD-SY-DZO" id="UjC-X7-Z2W"/>
+                        <outlet property="heartRateLabel" destination="ELk-S6-5eV" id="M3F-3L-O9p"/>
+                        <outlet property="pauseBtn" destination="N4G-an-U4W" id="uUK-IQ-bry"/>
+                        <outlet property="playBtn" destination="oe5-GO-6oB" id="gAy-09-wcf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmX-9G-Kxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2333.3333333333335" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dal-fE-he4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e49-75-bW4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HoV-mJ-Ef6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TQw-HN-cFA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCv-jO-Y4T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="94.419642857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
